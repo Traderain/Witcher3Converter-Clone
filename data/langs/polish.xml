@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<translation>
+
+	<element id="button_fileSelector" text="Wybierz model 3D"/>
+	<element id="button_convertir" text="Konwertuj ->"/>
+	<element id="dialogue_file" text="Wybierz Plik"/>
+	<element id="dialogue_folder" text="Wybierz folder z plikami gry"/>
+	<element id="base_directory" text="Domyślna Ścieżka"/>
+	<element id="label_exported_file_name" text="Nazwa"/>
+	
+	
+	<!-- Log window -->
+	<element id="log_writingFile" text="Wczytaj Plik"/>
+	<element id="log_readingFile" text="Zapisz Plik"/>
+	<element id="log_abort" text="Przerwano : Ścieżka do folderu nie istnieje"/>
+	<element id="log_warning_empty" text="Uwaga : Nazwa eksportowanego pliku jest pusta"/>
+
+	
+	<!-- Menus -->
+	<element id="menu_menu" text="Menu"/>
+	<element id="menu_menu_options" text="Opcje"/>
+	<element id="menu_menu_search" text="Szukaj"/>
+	<element id="menu_menu_addMesh" text="Ajouter d'autres meshes"/>
+	<element id="menu_menu_linkedFiles" text="Pokaż połączone pliki"/>
+	<element id="menu_menu_quit" text="Wyjście"/>
+	
+	<element id="menu_re" text="Narzędzia Redkit"/>
+	<element id="menu_re_size" text="Rozmiar"/>
+	<element id="menu_re_lod_empty" text="Pusto"/>
+	<element id="menu_re_lod_clear" text="Wyczyść obecny LOD"/>
+	<element id="menu_re_lod_clear_all" text="Wyczyść wszystkie LODy"/>
+	
+	<element id="menu_tw1" text="Narzędzia do Wiedźmin 1"/>
+	<element id="menu_tw1_bif" text="BIF extractor"/>
+	
+	<element id="menu_tw3" text="Narzędzia do Wiedźmin 3"/>
+	<element id="menu_tw3_tex_path" text="Wyczyść Ścieżki tekstur"/>
+	<element id="menu_tw3_setRig" text="Set rig"/>
+	<element id="menu_tw3_setAnimation" text="Set animation (Coming soon...)"/>
+	
+	<element id="menu_display" text="Ekran"/>
+	<element id="menu_display_wireframe" text="Szkielet"/>
+	
+	<element id="menu_language" text="Język"/>
+	
+	<element id="menu_help" text="Pomoc"/>
+	<element id="menu_help_webpage" text="Strona www"/>
+	
+	
+	<!-- Search tool -->
+	<element id="search_name" text="Nazwa"/>
+	<element id="search_load" text="Wczytaj"/>
+	<element id="search_button" text="Szukaj"/>
+	<element id="search_progress" text="Postęp"/>
+	<element id="search_extensions_filter" text="Extensions filter"/>
+	<element id="search_check_folder" text="Sprawdź nazwy folderów (więcej wyników)"/>
+	<element id="search_result" text="Nazwa"/>
+	
+	
+	<!-- Options -->
+	<element id="options_view" text="Widok"/>
+	<element id="options_camera" text="Kamera"/>
+	<element id="options_camera_movement_speed" text="Prędkość poruszania"/>
+	<element id="options_camera_rot_speed" text="Prędkość Obracania"/>
+	<element id="options_background" text="Kolor Tła"/>
+	<element id="options_export" text="Eksportuj"/>
+	<element id="options_export_to_pack0" text="Eksportuj do folderu pack0"/>
+	<element id="options_export_to_other" text="Eksportuj do innego folderu"/>
+	<element id="options_export_move_textures" text="Przemieść Teksture"/>
+	<element id="options_export_target" text="Wybierz folder do eksportu"/>
+	<element id="options_export_convert_textures" text="Convert textures (DDS format by default)"/>
+	<element id="options_tw3_textures_folder" text="Textures folder"/>
+	<element id="options_tw3_skeleton" text="Load skeleton (experimental - disable it if you don't need it)"/>
+	<element id="options_debug_log" text="Włącz 'debug.log'"/>
+	<element id="options_debug_log_label" text="Jeśli masz problem, aby załadować plik w2ent / w2mesh, możesz włączyć tę opcję, aby wygenerować plik dziennika. Ten plik pomórze mi w rozwiązaniu problemu, więc w razie problemu, możesz wysłać mi ten plik (poprzez forum Wiedźmina jeśli masz konto lub pocztą na jeanlouis.boudrand@hotmail.fr)(Błąd w spolszczeniu! Pisz:  matiworl@onet.pl lub mateuszprzychodzki97@gmail.com)"/>
+	
+</translation>

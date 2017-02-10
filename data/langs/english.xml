@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<translation>
+	<!-- Main view -->
+	<element id="button_fileSelector" text="Select a 3D model"/>
+	<element id="button_convertir" text="Convert ->"/>
+	<element id="dialogue_file" text="Select the file"/>
+	<element id="dialogue_folder" text="Select the folder of the game"/>
+	<element id="base_directory" text="Base directory"/>
+	<element id="label_exported_file_name" text="Name"/>
+	
+	
+	<!-- Log window -->
+	<element id="log_writingFile" text="Writing file"/>
+	<element id="log_readingFile" text="Reading file"/>
+	<element id="log_abort" text="Abort : Destination folder doesn't exist"/>
+	<element id="log_warning_empty" text="Warning : The name of the exported file is empty"/>
+
+	
+	<!-- Menus -->
+	<element id="menu_menu" text="Menu"/>
+	<element id="menu_menu_options" text="Options"/>
+	<element id="menu_menu_search" text="Search"/>
+	<element id="menu_menu_addMesh" text="Add mesh(es)"/>
+	<element id="menu_menu_linkedFiles" text="Show linked files"/>
+	<element id="menu_menu_quit" text="Quit"/>
+	
+	<element id="menu_re" text="Redkit tools"/>
+	<element id="menu_re_size" text="Size"/>
+	<element id="menu_re_lod_empty" text="empty"/>
+	<element id="menu_re_lod_clear" text="Clear current LOD"/>
+	<element id="menu_re_lod_clear_all" text="Clear all LODs"/>
+	
+	<element id="menu_tw1" text="The Witcher 1 tools"/>
+	<element id="menu_tw1_bif" text="BIF extractor"/>
+	
+	<element id="menu_tw3" text="The Witcher 3 tools"/>
+	<element id="menu_tw3_tex_path" text="LUA utils : Clean textures path"/>
+	<element id="menu_tw3_setRig" text="Set rig"/>
+	<element id="menu_tw3_setAnimation" text="Set animation (Coming soon...)"/>
+	
+	<element id="menu_display" text="Display"/>
+	<element id="menu_display_wireframe" text="Wireframe"/>
+	
+	<element id="menu_language" text="Language"/>
+	
+	<element id="menu_help" text="Help"/>
+	<element id="menu_help_webpage" text="WebPage"/>
+	
+	
+	<!-- Search tool -->
+	<element id="search_name" text="Name"/>
+	<element id="search_load" text="Load"/>
+	<element id="search_button" text="Search"/>
+	<element id="search_progress" text="Progress"/>
+	<element id="search_extensions_filter" text="Extensions filter"/>
+	<element id="search_check_folder" text="Check also the folder names (more results)"/>
+	<element id="search_result" text="Results"/>
+	
+	
+	<!-- Options -->
+	<element id="options_view" text="View"/>
+	<element id="options_camera" text="Camera"/>
+	<element id="options_camera_movement_speed" text="Movement speed"/>
+	<element id="options_camera_rot_speed" text="Rotation speed"/>
+	<element id="options_background" text="Background color"/>
+	<element id="options_export" text="Export"/>
+	<element id="options_export_to_pack0" text="Export to the 'base directory' folder"/>
+	<element id="options_export_to_other" text="Export to an other folder"/>
+	<element id="options_export_move_textures" text="Copy textures"/>
+	<element id="options_export_target" text="Select the export folder"/>
+	<element id="options_export_convert_textures" text="Convert textures (DDS format by default)"/>
+	<element id="options_tw3_textures_folder" text="Textures folder"/>
+	<element id="options_tw3_skeleton" text="Load skeleton (experimental - disable it if you don't need it)"/>
+	<element id="options_debug_log" text="Enable 'debug.log'"/>
+	<element id="options_debug_log_label" text="If you have a problem to load a w2ent/w2mesh file, you can enable this option to generate a log file. This file can help me to solve your problem, so in case of problem, you can send me this file (via The witcher forum if you have an account or by mail at jeanlouis.boudrand@hotmail.fr.)"/>
+
+</translation>
