@@ -775,7 +775,7 @@ bool CREMeshWriter::writeMesh(io::IWriteFile* file, scene::IMesh* mesh, s32 flag
 {
     // Call writeAnimatedMesh.
     bool skinned = false;
-    if (mesh->getMeshType() == EAMT_SKINNED)
+    if (dynamic_cast<IAnimatedMesh*>(mesh)->getMeshType() == EAMT_SKINNED)
         skinned = true;
 
     return writeAnimatedMesh(file, (scene::ISkinnedMesh*)mesh, skinned, flags);

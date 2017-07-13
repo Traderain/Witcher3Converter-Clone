@@ -57,7 +57,8 @@ IAnimatedMesh* CREMeshFileLoader::createMesh(io::IReadFile* f)
 		return 0;
 
     #ifdef _REREADER_DEBUG
-	u32 time = os::Timer::getRealTime();
+	//u32 time = timeGetTime();
+	u32 time = 0;
 
     // log
     logContent = "-> ";
@@ -82,12 +83,12 @@ IAnimatedMesh* CREMeshFileLoader::createMesh(io::IReadFile* f)
 		AnimatedMesh = 0;
 	}
     #ifdef _REREADER_DEBUG
-	time = os::Timer::getRealTime() - time;
+	//time = timeGetTime() - time;
 	core::stringc tmpString = "Time to load ";
 	tmpString += "binary RE file: ";
 	tmpString += time;
 	tmpString += "ms";
-	os::Printer::log(tmpString.c_str());
+	//os::Printer::log(tmpString.c_str());
     #endif
 
 	return AnimatedMesh;
@@ -202,7 +203,7 @@ void CREMeshFileLoader::readLOD(io::IReadFile* f)
         tmpString += "\nposition curseur : ";
         tmpString += f->getPos();
         tmpString += "\n";
-        os::Printer::log(tmpString.c_str());
+        //os::Printer::log(tmpString.c_str());
         #endif
 
 
@@ -293,7 +294,7 @@ void CREMeshFileLoader::readLOD(io::IReadFile* f)
             tmpString += u;
             tmpString += " et ";
             tmpString += v;
-            os::Printer::log(tmpString.c_str());
+            //os::Printer::log(tmpString.c_str());
             #endif
 
             //std::cout << "Vertice :  x = " << x << "  y = "<< y << "  z = "<< z << ", UV = " << u << " et " << v << std::endl;
@@ -327,8 +328,8 @@ void CREMeshFileLoader::readLOD(io::IReadFile* f)
             tmpString += "  idx3 = ";
             tmpString += idx3;
             tmpString += ", nothing = ";
-            tmpString += nothing;
-            os::Printer::log(tmpString.c_str());
+            //tmpString += nothing;
+            //os::Printer::log(tmpString.c_str());
             #endif // _REREADER_DEBUG
         }
         buf->recalculateBoundingBox();

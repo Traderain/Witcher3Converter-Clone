@@ -111,11 +111,12 @@ void TW1bifExtractor::extractKeyBIF(QString exportFolder, QString filename)
         int back = bifFile.pos();
 
         bifFile.seek(nameOffset);
-        char name[nameSize + 1];
+        char* name = new char[nameSize + 1];
         bifFile.read(name, nameSize);
         name[nameSize] = 0x00;
         QString qname = name;
         std::cout << name << std::endl;
+		delete[] name;
 
         if (QFile::exists(bifFolder + qname))
             extractBIF(exportFolder, bifFolder + qname, i);

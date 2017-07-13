@@ -507,7 +507,7 @@ QString QIrrlichtWidget::convertTexture(QString filename, QString destDir)
     return destDir;
 }
 
-void scaleSkeleton(scene::IMesh* mesh, float factor)
+void scaleSkeleton(scene::IAnimatedMesh* mesh, float factor)
 {
     if (mesh->getMeshType() != scene::EAMT_SKINNED)
         return;
@@ -621,8 +621,8 @@ void QIrrlichtWidget::writeFile (QString exportFolder, QString filename, QString
             type = irr::scene::EMWT_OBJ;
         else if (extension == ".ply")
             type = irr::scene::EMWT_PLY;
-        else if (extension == ".b3d")
-            type = irr::scene::EMWT_B3D;
+        //else if (extension == ".b3d")
+            //type = irr::scene::EMWT_B3D;
 
         IMeshWriter* mw = 0;
         mw = _device->getSceneManager()->createMeshWriter(type);

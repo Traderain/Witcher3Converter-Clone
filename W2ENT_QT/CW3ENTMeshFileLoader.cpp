@@ -342,7 +342,7 @@ bool CW3ENTMeshFileLoader::W3_ReadBuffer(io::IReadFile* file, SBufferInfos buffe
         }
         else if (meshInfos.vertexType == EMVT_SKINNED)
         {
-            unsigned char skinningData[meshInfos.numBonesPerVertex * 2];
+            unsigned char* skinningData = new unsigned char[meshInfos.numBonesPerVertex * 2];
             bufferFile->read(&skinningData[0], meshInfos.numBonesPerVertex * 2);
 
             for (u32 j = 0; j < meshInfos.numBonesPerVertex; ++j)
@@ -368,6 +368,7 @@ bool CW3ENTMeshFileLoader::W3_ReadBuffer(io::IReadFile* file, SBufferInfos buffe
                     W3_DataCache::_instance.addVertexEntry(boneId, bufferId, i, fweight);
                 }
             }
+			delete[] skinningData;
 
         }
 
@@ -1358,7 +1359,7 @@ void CW3ENTMeshFileLoader::W3_CEntityTemplate(io::IReadFile* file, W3_DataInfos 
 
             //std::cout << file->getPos() << std::endl;
 
-            u8 data[arraySize];
+            u8* data = new u8[arraySize];
             file->read(data, arraySize);
 
 
@@ -1371,6 +1372,7 @@ void CW3ENTMeshFileLoader::W3_CEntityTemplate(io::IReadFile* file, W3_DataInfos 
             if (m)
                 m->drop();
 
+			delete[] data;
             entityFile->drop();
         }
 
