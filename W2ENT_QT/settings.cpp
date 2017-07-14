@@ -24,7 +24,7 @@ QString Settings::_texFormat = ".jpg";
 
 QString Settings::_pack0 = "";
 
-QString Settings::_TW3TexPath = "";
+QString Settings::_TW3TexPath = "/";
 bool Settings::_TW3LoadSkel = false;
 bool Settings::_TW3LoadBestLOD = false;
 
