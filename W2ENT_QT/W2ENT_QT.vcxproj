@@ -128,7 +128,7 @@
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <OutputFile>$(OutDir)\The_Witcher_Converter.exe</OutputFile>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Link>
     <Midl>
@@ -140,7 +140,7 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_WIDGETS_LIB;QT_GUI_LIB;QT_XML_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>XCOPY "$(ProjectDir)..\data" "$(TargetDir)" /S /Y</Command>
+      <Command>XCOPY "$(ProjectDir)..\data" "$(TargetDir)" /S /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
