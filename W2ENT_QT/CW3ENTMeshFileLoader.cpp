@@ -932,8 +932,9 @@ float readCompressedFloat(io::IReadFile* file, u8 compressionSize)
         return readF32(file); // Not tested yet !
 }
 
-float bits12ToFloat(s16 value)
+float bits12ToFloat(u16 value)
 {
+    /*
     if (value & 0x0800)
         value = value;
     else
@@ -941,6 +942,8 @@ float bits12ToFloat(s16 value)
 
     value = (value & 0x000007FF);
     float fVal = value / 2047.f;
+    */
+    float fVal = (2047.0f - value) * (1 / 2048.0f);
 
     return fVal;
 }
@@ -968,20 +971,20 @@ void CW3ENTMeshFileLoader::readAnimBuffer(core::array<core::array<SAnimationBuff
             dataFile->seek(infos.dataAddr);
 
             // Debug infos
-            std::cout << "--> Type : ";
+            /*std::cout << "--> Type : ";
             if (infos.type == EATT_POSITION)
                 std::cout << "EATT_POSITION";
             else if (infos.type == EATT_ORIENTATION)
                 std::cout << "EATT_ORIENTATION";
             else
                 std::cout << "EATT_SCALE";
-            std::cout << std::endl;
+            std::cout << std::endl;*/
 
 
 
-            std::cout << "numFrames = " << infos.numFrames << std::endl;
-            std::cout << "dt=" << infos.dt << std::endl;
-            std::cout << "@=" << dataFile->getPos() << std::endl;
+            //std::cout << "numFrames = " << infos.numFrames << std::endl;
+            //std::cout << "dt=" << infos.dt << std::endl;
+            //std::cout << "@=" << dataFile->getPos() << std::endl;
             //std::cout << "compression=" << (int)infos.compression << std::endl;
 
             // TODO
@@ -1005,13 +1008,13 @@ void CW3ENTMeshFileLoader::readAnimBuffer(core::array<core::array<SAnimationBuff
                     f32 py = readCompressedFloat(dataFile, compressionSize);
                     f32 pz = readCompressedFloat(dataFile, compressionSize);
 
-                    std::cout << "Position value = " << px << ", " << py << ", " << pz << std::endl;
+                    //std::cout << "Position value = " << px << ", " << py << ", " << pz << std::endl;
 
-                    /*
+                    
                     scene::ISkinnedMesh::SPositionKey* key = meshToAnimate->addPositionKey(joint);
                     key->position = core::vector3df(px, py, pz);
                     key->frame = keyframe;
-                    */
+                    
 
                 }
                 if (infos.type == EATT_ORIENTATION)
@@ -1031,7 +1034,7 @@ void CW3ENTMeshFileLoader::readAnimBuffer(core::array<core::array<SAnimationBuff
 
                         f32 fx, fy, fz, fw;
 
-                        s16 x = 0, y = 0, z = 0, w = 0;
+                        u16 x = 0, y = 0, z = 0, w = 0;
                         x = (bits & 0x0000FFF000000000) >> 36;
                         y = (bits & 0x0000000FFF000000) >> 24;
                         z = (bits & 0x0000000000FFF000) >> 12;
@@ -1048,16 +1051,18 @@ void CW3ENTMeshFileLoader::readAnimBuffer(core::array<core::array<SAnimationBuff
                         fx = bits12ToFloat(x);
                         fy = bits12ToFloat(y);
                         fz = bits12ToFloat(z);
-                        fw = bits12ToFloat(w);
+                        fw = -bits12ToFloat(w);
 
                         orientation = core::quaternion(fx, fy, fz, fw);
                         core::vector3df euler;
                         orientation.toEuler(euler);
                         euler *= core::RADTODEG;
+                        //if (f != 0)
+                            //orientation.slerp(prevorient, orientation, infos.dt);
 
-                        std::cout << "Quaternion : x=" << fx << ", y=" << fy << ", z=" << fz << ", w=" << fw << std::endl;
-                        std::cout << "Quaternion mult =" << fx * fx + fy * fy + fz * fz + fw * fw << std::endl;
-                        std::cout << "Euler : x=" << euler.X << ", y=" << euler.Y << ", z=" << euler.Z << std::endl;
+                        //std::cout << "Quaternion : x=" << fx << ", y=" << fy << ", z=" << fz << ", w=" << fw << std::endl;
+                        //std::cout << "Quaternion mult =" << fx * fx + fy * fy + fz * fz + fw * fw << std::endl;
+                        //std::cout << "Euler : x=" << euler.X << ", y=" << euler.Y << ", z=" << euler.Z << std::endl;
 
                     }
 
@@ -1072,14 +1077,14 @@ void CW3ENTMeshFileLoader::readAnimBuffer(core::array<core::array<SAnimationBuff
                     f32 sy = readCompressedFloat(dataFile, compressionSize);
                     f32 sz = readCompressedFloat(dataFile, compressionSize);
 
-                    std::cout << "Scale value = " << sx << ", " << sy << ", " << sz << std::endl;
+                    //std::cout << "Scale value = " << sx << ", " << sy << ", " << sz << std::endl;
 
                     scene::ISkinnedMesh::SScaleKey* key = meshToAnimate->addScaleKey(meshToAnimate->getAllJoints()[i]);
                     key->scale = core::vector3df(sx, sy, sz);
                     key->frame = keyframe;
                 }
             }
-            std::cout << std::endl;
+            //std::cout << std::endl;
         }
     }
 }

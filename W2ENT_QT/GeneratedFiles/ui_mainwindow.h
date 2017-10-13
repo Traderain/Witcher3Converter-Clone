@@ -133,7 +133,7 @@ public:
         actionBIF_extractor->setObjectName(QStringLiteral("actionBIF_extractor"));
         actionSet_animations = new QAction(MainWindow);
         actionSet_animations->setObjectName(QStringLiteral("actionSet_animations"));
-        actionSet_animations->setEnabled(false);
+        actionSet_animations->setEnabled(true);
         actionMaterials_explorer = new QAction(MainWindow);
         actionMaterials_explorer->setObjectName(QStringLiteral("actionMaterials_explorer"));
         centralWidget = new QWidget(MainWindow);
